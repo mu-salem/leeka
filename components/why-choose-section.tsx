@@ -61,7 +61,7 @@ export function WhyChooseSection() {
 
   return (
     <section id="why-choose" ref={sectionRef} className="py-20 sm:py-32">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-full">
         <div
           className={`grid lg:grid-cols-2 gap-12 items-center ${
             isVisible ? "opacity-100" : "opacity-0"
@@ -72,12 +72,12 @@ export function WhyChooseSection() {
               isVisible ? "translate-x-0" : language === "ar" ? "translate-x-12" : "-translate-x-12"
             }`}
           >
-            <div className="relative">
+            <div className="relative w-full max-w-full">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
               <img
                 src="/8527923.jpg"
                 alt="Why Choose Lekka"
-                className="relative w-full h-auto rounded-3xl shadow-2xl"
+                className="relative w-full h-auto max-w-full rounded-3xl shadow-2xl"
               />
             </div>
           </div>

@@ -51,14 +51,14 @@ export function AboutSection() {
       ref={sectionRef}
       className="py-20 sm:py-32 bg-secondary/30 dark:bg-secondary/20"
     >
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
           {/* Left Image */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 w-full max-w-full">
             <img
               src="/about.png"
               alt="About Lekka Tech"
-              className="w-full h-[300px] sm:h-[400px] object-cover rounded-2xl"
+              className="w-full max-w-full h-[300px] sm:h-[400px] object-cover rounded-2xl"
             />
           </div>
 

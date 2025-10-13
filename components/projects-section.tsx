@@ -101,7 +101,7 @@ export function ProjectsSection() {
 
   return (
     <section id="works" ref={sectionRef} className="py-20 sm:py-32 bg-secondary/30 dark:bg-secondary/20">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-full">
         <div
           className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"

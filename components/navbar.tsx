@@ -54,14 +54,14 @@ export function Navbar() {
           scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-full">
           <div className="flex items-center justify-between h-16 sm:h-20">
             <button
               onClick={() => scrollToSection("hero")}
               className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity"
             >
-              <img src="/logo.svg" alt="Lekka logo" className="h-12 sm:h-16 md:h-20 w-auto" />
-              <span className="hidden sm:inline text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight" 
+              <img src="/logo.svg" alt="Lekka logo" className="h-10 sm:h-14 md:h-16 lg:h-20 w-auto" />
+              <span className="hidden sm:inline text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight" 
                     style={{ fontFamily: "'Orbitron', 'Exo 2', sans-serif" }}>
                 {t.site.title}
               </span>

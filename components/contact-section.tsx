@@ -54,7 +54,7 @@ export function ContactSection() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
 
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-full relative z-10">
         <div
           className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -219,18 +219,18 @@ export function ContactSection() {
         </div>
       </div>
       {/* Enhanced CTA with impressive animated background */}
-      <div className="mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white p-12 md:p-16">
+      <div className="mt-12 w-full">
+        <div className="max-w-7xl mx-auto px-4 py-8 w-full">
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white p-8 sm:p-12 md:p-16 w-full">
             {/* Animated gradient orbs */}
             <div className="absolute inset-0 opacity-40">
-              <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse"></div>
+              <div className="absolute top-0 left-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse"></div>
               <div
-                className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-blue-500 rounded-full filter blur-3xl animate-pulse"
+                className="absolute bottom-0 right-0 w-56 sm:w-80 md:w-[28rem] h-56 sm:h-80 md:h-[28rem] bg-blue-500 rounded-full filter blur-3xl animate-pulse"
                 style={{ animationDelay: "1s" }}
               ></div>
               <div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500 rounded-full filter blur-3xl animate-pulse"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-indigo-500 rounded-full filter blur-3xl animate-pulse"
                 style={{ animationDelay: "2s" }}
               ></div>
             </div>
@@ -245,37 +245,37 @@ export function ContactSection() {
             ></div>
 
             {/* Floating decorative elements */}
-            <div className="absolute top-10 left-10 w-20 h-20 border-2 border-purple-400/30 rounded-lg rotate-12 animate-pulse"></div>
+            <div className="hidden sm:block absolute top-10 left-10 w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20 border-2 border-purple-400/30 rounded-lg rotate-12 animate-pulse"></div>
             <div
-              className="absolute bottom-10 right-10 w-16 h-16 border-2 border-blue-400/30 rounded-full animate-pulse"
+              className="hidden sm:block absolute bottom-10 right-10 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 border-2 border-blue-400/30 rounded-full animate-pulse"
               style={{ animationDelay: "0.5s" }}
             ></div>
             <div
-              className="absolute top-1/2 right-20 w-12 h-12 bg-purple-500/20 rounded-lg rotate-45 animate-pulse"
+              className="hidden sm:block absolute top-1/2 right-20 w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 bg-purple-500/20 rounded-lg rotate-45 animate-pulse"
               style={{ animationDelay: "1.5s" }}
             ></div>
 
             <div className="relative z-10 text-center">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
-                <span className="text-purple-300 text-sm tracking-widest uppercase font-semibold">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 mb-6">
+                <div className="w-8 sm:w-12 md:w-16 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+                <span className="text-purple-300 text-xs sm:text-sm tracking-widest uppercase font-semibold">
                   {t.contact.cta.smallLabel}
                 </span>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+                <div className="w-8 sm:w-12 md:w-16 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
               </div>
 
-              <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight px-4">
                 {t.contact.cta.titleLine1}
                 <br />
                 {t.contact.cta.titleLine2}
               </h3>
 
-              <p className="text-gray-200 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-gray-200 text-base sm:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
                 {t.contact.cta.paragraph}
               </p>
 
-              <div className="flex justify-center">
-                <button className="group relative bg-white text-purple-900 px-10 py-4 rounded-full uppercase tracking-wider font-bold transition-all duration-300 shadow-2xl hover:shadow-purple-500/50">
+              <div className="flex justify-center px-4">
+                <button className="group relative bg-white text-purple-900 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full uppercase tracking-wider font-bold text-sm sm:text-base transition-all duration-300 shadow-2xl hover:shadow-purple-500/50">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                     {t.contact.cta.button}

@@ -22,13 +22,13 @@ export function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-16 sm:pt-20">
-      {/* Background gradient shapes */}
+      {/* Background gradient shapes - contained within viewport */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-primary/20 dark:bg-primary/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-accent/20 dark:bg-accent/30 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-primary/20 dark:bg-primary/30 rounded-full blur-3xl animate-pulse -translate-x-1/3" />
+        <div className="absolute bottom-1/4 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-accent/20 dark:bg-accent/30 rounded-full blur-3xl animate-pulse delay-1000 translate-x-1/3" />
       </div>
 
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10 w-full max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text */}
           <div

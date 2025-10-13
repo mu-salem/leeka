@@ -67,8 +67,8 @@ export function MobileSection() {
   }
 
   return (
-    <section id="mobile" ref={sectionRef} className="py-20 sm:py-32 bg-secondary/30">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="mobile" ref={sectionRef} className="py-20 sm:py-32 bg-secondary/30 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-full">
         <div
           className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -79,7 +79,7 @@ export function MobileSection() {
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          <div className="relative h-[600px] flex items-center justify-center perspective-1000">
+          <div className="relative h-[600px] flex items-center justify-center perspective-1000 overflow-x-hidden">
             {mobileApps.map((app, index) => {
               const offset = index - currentIndex
               const absOffset = Math.abs(offset)
@@ -89,17 +89,17 @@ export function MobileSection() {
                   key={index}
                   className="absolute transition-all duration-700 ease-out"
                   style={{
-                    transform: `translateX(${offset * 280}px) scale(${
+                    transform: `translateX(${offset * 200}px) scale(${
                       absOffset === 0 ? 1 : 0.8
                     }) rotateY(${offset * 15}deg)`,
                     opacity: absOffset > 2 ? 0 : absOffset === 0 ? 1 : 0.5,
                     zIndex: 10 - absOffset,
                   }}
                 >
-                  <div className="w-64 h-[520px] bg-card border-4 border-border rounded-[3rem] overflow-hidden shadow-2xl">
+                  <div className="w-48 sm:w-56 md:w-64 h-[420px] sm:h-[480px] md:h-[520px] bg-card border-4 border-border rounded-[3rem] overflow-hidden shadow-2xl">
                     <img src={app.image || "/placeholder.svg"} alt={app.title} className="w-full h-full object-cover" />
                   </div>
-                  {absOffset === 0 && <p className="text-center mt-6 text-lg font-semibold">{app.title}</p>}
+                  {absOffset === 0 && <p className="text-center mt-6 text-base sm:text-lg font-semibold">{app.title}</p>}
                 </div>
               )
             })}
