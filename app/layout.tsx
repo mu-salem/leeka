@@ -32,7 +32,7 @@ export default function RootLayout({
       </head>
     {/* suppressHydrationWarning prevents warnings when browser extensions (e.g. Grammarly) inject attributes into the body
       which cause SSR/CSR markup mismatch. This is safe here because the body content is client-driven by providers. */}
-    <body suppressHydrationWarning>
+    <body suppressHydrationWarning className="overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>

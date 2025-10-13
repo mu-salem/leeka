@@ -116,9 +116,23 @@
     @apply border-border outline-ring/50;
   }
   
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   body {
     @apply bg-background text-foreground;
     transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Ensure all images scale properly */
+  img {
+    max-width: 100%;
+    height: auto;
   }
   
   /* Apply smooth transitions only to elements that need them */
