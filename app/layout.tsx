@@ -22,14 +22,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`} suppressHydrationWarning>
+    <html lang="ar" className={`${inter.variable} antialiased`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
       </head>
     {/* suppressHydrationWarning prevents warnings when browser extensions (e.g. Grammarly) inject attributes into the body
       which cause SSR/CSR markup mismatch. This is safe here because the body content is client-driven by providers. */}
     <body suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
       </body>
