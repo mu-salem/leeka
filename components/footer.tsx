@@ -19,7 +19,7 @@ export function Footer() {
 
   return (
     <footer className="bg-secondary/50 dark:bg-secondary/30 border-t border-border">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-full py-16">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16">
         {/* Main Content - Logo + Three Columns */}
         <div className="grid md:grid-cols-12 gap-12 mb-12">
           {/* Logo and Description - يأخذ 5 أعمدة */}

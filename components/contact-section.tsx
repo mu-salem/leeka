@@ -256,26 +256,26 @@ export function ContactSection() {
             ></div>
 
             <div className="relative z-10 text-center">
-              <div className="flex items-center justify-center gap-2 sm:gap-3 mb-6">
-                <div className="w-8 sm:w-12 md:w-16 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
-                <span className="text-purple-300 text-xs sm:text-sm tracking-widest uppercase font-semibold">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+                <span className="text-purple-300 text-sm tracking-widest uppercase font-semibold">
                   {t.contact.cta.smallLabel}
                 </span>
-                <div className="w-8 sm:w-12 md:w-16 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight px-4">
+              <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                 {t.contact.cta.titleLine1}
                 <br />
                 {t.contact.cta.titleLine2}
               </h3>
 
-              <p className="text-gray-200 text-base sm:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
+              <p className="text-gray-200 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
                 {t.contact.cta.paragraph}
               </p>
 
-              <div className="flex justify-center px-4">
-                <button className="group relative bg-white text-purple-900 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full uppercase tracking-wider font-bold text-sm sm:text-base transition-all duration-300 shadow-2xl hover:shadow-purple-500/50">
+              <div className="flex justify-center">
+                <button className="group relative bg-white text-purple-900 px-10 py-4 rounded-full uppercase tracking-wider font-bold transition-all duration-300 shadow-2xl hover:shadow-purple-500/50">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                     {t.contact.cta.button}
