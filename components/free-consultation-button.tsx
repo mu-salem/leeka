@@ -22,7 +22,7 @@ export function FreeConsultationButton() {
     if (isExpanded && !isHovered) {
       timeoutId = setTimeout(() => {
         setIsExpanded(false);
-      }, 5000);
+      }, 3000);
     }
 
     return () => {
