@@ -25,6 +25,10 @@ export default function RootLayout({
     <html lang="ar" className={`${inter.variable} antialiased`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
       </head>
     {/* suppressHydrationWarning prevents warnings when browser extensions (e.g. Grammarly) inject attributes into the body
       which cause SSR/CSR markup mismatch. This is safe here because the body content is client-driven by providers. */}

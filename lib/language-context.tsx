@@ -17,7 +17,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem("language") as Language
-    if (stored && (stored === "en" || stored === "ar")) {
+    if (stored && (stored === "en" || stored === "ar" || stored === "zh")) {
       setLanguageState(stored)
       document.documentElement.lang = stored
       document.documentElement.dir = stored === "ar" ? "rtl" : "ltr"

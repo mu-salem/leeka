@@ -33,7 +33,7 @@ export function Navbar() {
     }
   }
 
-  const handleLanguageChange = (newLang: "en" | "ar") => {
+  const handleLanguageChange = (newLang: "en" | "ar" | "zh") => {
     if (newLang === language) return // Don't change if already selected
     
     setIsChangingLanguage(true)
@@ -118,14 +118,14 @@ export function Navbar() {
                 </button>
               )}
 
-              {/* Language Toggle Switch - Each side clickable separately */}
+              {/* Language Toggle Switch - Three languages */}
               <div className={`relative h-10 rounded-full bg-secondary/80 border border-border/50 transition-all duration-300 flex items-center overflow-hidden p-0.5 ${
                 language === "ar" ? "flex-row-reverse" : ""
               }`}>
                 {/* Sliding background indicator */}
                 <div 
-                  className={`absolute top-0.5 bottom-0.5 w-[calc(50%-2px)] bg-primary/20 rounded-full transition-all duration-500 ease-out ${
-                    language === "en" ? "left-0.5" : "right-0.5"
+                  className={`absolute top-0.5 bottom-0.5 w-[calc(33.33%-2px)] bg-primary/20 rounded-full transition-all duration-500 ease-out ${
+                    language === "en" ? "left-0.5" : language === "ar" ? "right-0.5" : "left-1/3"
                   }`}
                 />
                 
@@ -133,7 +133,7 @@ export function Navbar() {
                 <button
                   onClick={() => handleLanguageChange("en")}
                   disabled={isChangingLanguage}
-                  className={`relative z-10 h-9 px-5 rounded-full font-bold text-sm transition-all duration-500 ${
+                  className={`relative z-10 h-9 px-4 rounded-full font-bold text-sm transition-all duration-500 ${
                     language === "en" 
                       ? "text-primary" 
                       : "text-muted-foreground hover:text-foreground"
@@ -142,11 +142,24 @@ export function Navbar() {
                   EN
                 </button>
                 
+                {/* ZH Button */}
+                <button
+                  onClick={() => handleLanguageChange("zh")}
+                  disabled={isChangingLanguage}
+                  className={`relative z-10 h-9 px-4 rounded-full font-bold text-sm transition-all duration-500 ${
+                    language === "zh" 
+                      ? "text-primary" 
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  中文
+                </button>
+                
                 {/* AR Button */}
                 <button
                   onClick={() => handleLanguageChange("ar")}
                   disabled={isChangingLanguage}
-                  className={`relative z-10 h-9 px-5 rounded-full font-bold text-sm transition-all duration-500 ${
+                  className={`relative z-10 h-9 px-4 rounded-full font-bold text-sm transition-all duration-500 ${
                     language === "ar" 
                       ? "text-primary" 
                       : "text-muted-foreground hover:text-foreground"

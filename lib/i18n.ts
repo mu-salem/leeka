@@ -27,6 +27,24 @@ export const translations = {
         "Transform your ideas into reality. Our expert team is ready to guide you through every step of your digital journey.",
       button: "Free Consultation",
     },
+    freeConsultation: {
+      button: "Free Consultation Now",
+      ariaLabel: "Get a free consultation",
+      dialog: {
+        title: "Get Your Free Consultation",
+        subtitle: "Let's discuss your project and bring your ideas to life",
+        form: {
+          name: "Your Name",
+          email: "Your Email",
+          phone: "Phone Number (Optional)",
+          message: "Tell us about your project",
+          submit: "Send Message",
+          sending: "Sending...",
+        },
+        success: "Thank you! We'll get back to you soon.",
+        error: "Something went wrong. Please try again.",
+      },
+    },
     intro: {
       title: "We Create Digital Solutions that Empower Your Business",
       paragraph1:
@@ -218,6 +236,24 @@ export const translations = {
       cta1: "استكشف أعمالنا",
       cta2: "تواصل معنا",
     },
+    freeConsultation: {
+      button: "استشارة مجانية الآن",
+      ariaLabel: "احصل على استشارة مجانية",
+      dialog: {
+        title: "احصل على استشارتك المجانية",
+        subtitle: "دعنا نناقش مشروعك ونحول أفكارك إلى واقع",
+        form: {
+          name: "الاسم",
+          email: "البريد الإلكتروني",
+          phone: "رقم الهاتف (اختياري)",
+          message: "أخبرنا عن مشروعك",
+          submit: "إرسال الرسالة",
+          sending: "جاري الإرسال...",
+        },
+        success: "شكراً لك! سنتواصل معك قريباً.",
+        error: "حدث خطأ. يرجى المحاولة مرة أخرى.",
+      },
+    },
     intro: {
       title: "نصنع الحلول الرقمية التي تدعم نمو عملك",
       paragraph1:
@@ -402,6 +438,24 @@ export const translations = {
       paragraph:
         "将您的创意变为现实。我们的专业团队随时准备引导您完成数字化转型的每一步。",
       button: "免费咨询",
+    },
+    freeConsultation: {
+      button: "免费咨询现在",
+      ariaLabel: "获取免费咨询",
+      dialog: {
+        title: "获取免费咨询",
+        subtitle: "让我们讨论您的项目，将您的想法变为现实",
+        form: {
+          name: "您的姓名",
+          email: "您的邮箱",
+          phone: "电话号码（可选）",
+          message: "告诉我们您的项目",
+          submit: "发送消息",
+          sending: "发送中...",
+        },
+        success: "谢谢！我们会尽快与您联系。",
+        error: "出错了。请重试。",
+      },
     },
     intro: {
       title: "我们打造助力企业成长的数字化解决方案",

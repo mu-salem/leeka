@@ -8,12 +8,14 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { FloatingShapes } from "@/components/floating-shapes";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FreeConsultationButton } from "@/components/free-consultation-button";
 
 export default function Home() {
   return (
     <main className="min-h-screen relative">
       <FloatingShapes />
       <WhatsAppButton />
+      <FreeConsultationButton />
       <div className="relative z-10">
         <Navbar />
         <HeroSection />

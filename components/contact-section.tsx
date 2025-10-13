@@ -218,7 +218,6 @@ export function ContactSection() {
           </div>
         </div>
       </div>
-      
       {/* Enhanced CTA with impressive animated background */}
       <div className="mt-12">
         <div className="max-w-7xl mx-auto px-4 py-8">
