@@ -1,8 +1,5 @@
 import { Content } from "../../DB/models/content.model.js";
 
-/**
- * Create new content
- */
 export const createContent = async (req, res, next) => {
   const { section, key, type, value, translations } = req.body;
 
@@ -14,7 +11,6 @@ export const createContent = async (req, res, next) => {
     );
   }
 
-  // Check if content with same section and key exists
   const existingContent = await Content.findOne({ section, key });
   if (existingContent) {
     return next(
@@ -23,7 +19,6 @@ export const createContent = async (req, res, next) => {
     );
   }
 
-  // Create content
   const content = await Content.create({
     section,
     key,
@@ -40,20 +35,15 @@ export const createContent = async (req, res, next) => {
   });
 };
 
-/**
- * Update content
- */
 export const updateContent = async (req, res, next) => {
   const { id } = req.params;
   const updateData = req.body;
 
-  // Find content
   const content = await Content.findById(id);
   if (!content) {
     return next(new Error("Content not found!"), { cause: 404 });
   }
 
-  // If translations are being updated, validate all three languages
   if (updateData.translations) {
     if (
       !updateData.translations.en ||
@@ -67,7 +57,6 @@ export const updateContent = async (req, res, next) => {
     }
   }
 
-  // Update content
   updateData.updatedBy = req.admin._id;
   const updatedContent = await Content.findByIdAndUpdate(id, updateData, {
     new: true,
@@ -81,9 +70,6 @@ export const updateContent = async (req, res, next) => {
   });
 };
 
-/**
- * Delete content
- */
 export const deleteContent = async (req, res, next) => {
   const { id } = req.params;
 
@@ -100,9 +86,6 @@ export const deleteContent = async (req, res, next) => {
   });
 };
 
-/**
- * Get all content with pagination
- */
 export const getAllContent = async (req, res, next) => {
   const { page = 1, limit = 10, section = "", type = "all" } = req.query;
 
@@ -115,10 +98,8 @@ export const getAllContent = async (req, res, next) => {
     query.type = type;
   }
 
-  // Get total count
   const total = await Content.countDocuments(query);
 
-  // Get content
   const content = await Content.find(query)
     .populate("updatedBy", "name email")
     .limit(limit * 1)
@@ -138,9 +119,6 @@ export const getAllContent = async (req, res, next) => {
   });
 };
 
-/**
- * Get content by ID
- */
 export const getContentById = async (req, res, next) => {
   const { id } = req.params;
 
@@ -158,9 +136,6 @@ export const getContentById = async (req, res, next) => {
   });
 };
 
-/**
- * Get content by section
- */
 export const getContentBySection = async (req, res, next) => {
   const { section } = req.params;
 
