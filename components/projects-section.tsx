@@ -7,61 +7,53 @@ import { useEffect, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-// دمج كل المشاريع في array واحد
 const allProjects = [
   {
     title: "E-Commerce Platform",
-    description: "Modern shopping experience with seamless checkout",
-    image: "/modern-ecommerce-website-hero-section.jpg",
+    image: "/works/desktop/pro1.png",
   },
   {
     title: "SaaS Dashboard",
-    description: "Analytics platform for business intelligence",
-    image: "/saas-dashboard-analytics-interface.jpg",
+    image: "/works/desktop/pro1.png",
   },
   {
     title: "Real Estate Portal",
-    description: "Property listing and management system",
-    image: "/real-estate-website-hero.jpg",
+    image: "/works/desktop/pro1.png",
   },
   {
     title: "Healthcare App",
-    description: "Patient management and telemedicine platform",
-    image: "/healthcare-web-app-interface.jpg",
+    image: "/works/desktop/pro2.png",
   },
   {
     title: "Fintech Solution",
-    description: "Digital banking and payment processing",
-    image: "/fintech-banking-app-interface.jpg",
+    image: "/works/desktop/pro2.png",
   },
   {
     title: "Education Platform",
-    description: "Online learning management system",
-    image: "/education-learning-platform-interface.jpg",
+    image: "/works/desktop/pro2.png",
   },
   {
     title: "Fitness Tracker",
-    description: "Track your fitness goals and progress",
     image: "/works/mobile/mobile1.png",
   },
   {
     title: "Food Delivery",
-    description: "Order food from your favorite restaurants",
     image: "/works/mobile/mobile1.png",
   },
   {
     title: "Social Network",
-    description: "Connect with friends and family",
     image: "/works/mobile/mobile1.png",
   },
   {
     title: "Music Player",
-    description: "Listen to your favorite music",
     image: "/works/mobile/mobile1.png",
   },
   {
     title: "Travel Booking",
-    description: "Book your next adventure",
+    image: "/works/mobile/mobile1.png",
+  },
+  {
+    title: "Travel Booking",
     image: "/works/mobile/mobile1.png",
   },
 ]
@@ -154,14 +146,14 @@ export function ProjectsSection() {
 
         <div className="relative">
           {/* Slider Container with smooth fade transition */}
-          <div className="relative min-h-[600px] lg:min-h-[700px]">
+          <div className="relative min-h-[800px] lg:min-h-[1000px]">
             {/* Grid Layout - 2 rows × 3 columns */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {getCurrentCards().map((project, index) => (
                 <div
                   key={`${currentSlide}-${index}`}
                   onClick={() => handleProjectClick(project.title)}
-                  className={`group relative overflow-hidden rounded-3xl bg-card border-2 border-border hover:border-primary/60 transition-all duration-700 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 ${
+                  className={`group relative overflow-hidden rounded-3xl bg-card border-2 border-border hover:border-primary/60 transition-all duration-700 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 h-[380px] lg:h-[480px] ${
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
                   }`}
                   style={{ 
@@ -170,7 +162,7 @@ export function ProjectsSection() {
                   }}
                 >
                   {/* Image Container with Zoom Effect */}
-                  <div className="aspect-[16/11] overflow-hidden relative">
+                  <div className="h-full w-full overflow-hidden relative">
                     <img
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
@@ -186,14 +178,6 @@ export function ProjectsSection() {
                       <h4 className="text-2xl lg:text-3xl font-bold mb-3 text-white drop-shadow-lg">
                         {project.title}
                       </h4>
-                      <p className="text-gray-200 text-sm lg:text-base leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                        {project.description}
-                      </p>
-                    </div>
-
-                    {/* Decorative Element */}
-                    <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                      <div className="w-6 h-6 rounded-full bg-primary" />
                     </div>
                   </div>
                 </div>
@@ -201,50 +185,51 @@ export function ProjectsSection() {
             </div>
           </div>
 
-          {/* Navigation Arrows - Desktop */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => {
-              goToPrevSlide()
-              stopAutoSlide()
-              startAutoSlide()
-            }}
-            className={`absolute top-1/2 -translate-y-1/2 ${
-              language === "ar" ? "right-0 -mr-6 lg:-mr-8" : "left-0 -ml-6 lg:-ml-8"
-            } z-10 h-14 w-14 rounded-full bg-background/90 backdrop-blur-md hover:bg-primary hover:text-white border-2 border-border hover:border-primary shadow-2xl hover:scale-110 transition-all duration-300 hidden lg:flex`}
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => {
-              goToNextSlide()
-              stopAutoSlide()
-              startAutoSlide()
-            }}
-            className={`absolute top-1/2 -translate-y-1/2 ${
-              language === "ar" ? "left-0 -ml-6 lg:-ml-8" : "right-0 -mr-6 lg:-mr-8"
-            } z-10 h-14 w-14 rounded-full bg-background/90 backdrop-blur-md hover:bg-primary hover:text-white border-2 border-border hover:border-primary shadow-2xl hover:scale-110 transition-all duration-300 hidden lg:flex`}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+          {/* Combined Pagination Dots and Navigation Arrows */}
+          <div className="flex items-center justify-between mt-12 px-4">
+            {/* Pagination Dots */}
+            <div className="flex items-center justify-center gap-3 flex-1">
+              {Array.from({ length: totalSlides }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`transition-all duration-500 rounded-full ${
+                    index === currentSlide
+                      ? "w-12 h-3 bg-primary shadow-lg shadow-primary/50"
+                      : "w-3 h-3 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
 
-          {/* Pagination Dots */}
-          <div className="flex items-center justify-center gap-3 mt-12">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`transition-all duration-500 rounded-full ${
-                  index === currentSlide
-                    ? "w-12 h-3 bg-primary shadow-lg shadow-primary/50"
-                    : "w-3 h-3 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+            {/* Navigation Arrows - Always on the right side */}
+            <div className="flex items-center gap-4">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => {
+                  goToPrevSlide()
+                  stopAutoSlide()
+                  startAutoSlide()
+                }}
+                className="h-12 w-12 rounded-full bg-background/90 backdrop-blur-md hover:bg-primary hover:text-white border-2 border-border hover:border-primary shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => {
+                  goToNextSlide()
+                  stopAutoSlide()
+                  startAutoSlide()
+                }}
+                className="h-12 w-12 rounded-full bg-background/90 backdrop-blur-md hover:bg-primary hover:text-white border-2 border-border hover:border-primary shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
