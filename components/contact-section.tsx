@@ -16,10 +16,12 @@ import {
   MessageCircle,
   MapPin,
 } from "lucide-react";
+import { ConsultationDialog } from "@/components/consultation-dialog";
 
 export function ContactSection() {
   const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -275,7 +277,10 @@ export function ContactSection() {
               </p>
 
               <div className="flex justify-center">
-                <button className="group relative bg-white text-purple-900 px-10 py-4 rounded-full uppercase tracking-wider font-bold transition-all duration-300 shadow-2xl hover:shadow-purple-500/50">
+                <button 
+                  onClick={() => setIsDialogOpen(true)}
+                  className="group relative bg-white text-purple-900 px-10 py-4 rounded-full uppercase tracking-wider font-bold transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
+                >
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                     {t.contact.cta.button}
@@ -286,6 +291,8 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+
+      <ConsultationDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />
     </section>
   );
 }

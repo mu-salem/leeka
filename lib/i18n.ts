@@ -116,70 +116,70 @@ export const translations = {
       title: "What We Offer",
       items: {
         web: {
-          title: "Web Development",
+          title: "Website Design",
           description:
-            "Custom, high-performance websites built to scale and convert.",
+            "We design modern websites that combine beauty, speed, and professionalism, with easy-to-navigate user interfaces and a comfortable user experience on all devices. Whether you need an introductory site for your company or a comprehensive system to manage your services, we ensure to deliver a website that reflects your project's identity and achieves your goals with precision.",
+        },
+        ecommerce: {
+          title: "E-Commerce Store Development",
+          description:
+            "We provide you with a complete online store that helps you showcase your products easily and attract more customers. We use the latest technologies to develop fast and secure stores, with an integrated payment and shipping system, and a simple control panel that allows you to manage orders and inventory with ease.",
         },
         mobile: {
           title: "Mobile App Development",
           description:
-            "Cross-platform and native apps designed for speed, stability, and engagement.",
+            "We develop custom applications for Android and iOS with modern design and comfortable user experience. We help you turn your idea into a practical app that serves your audience and enhances your digital presence, with strong performance and smooth usability that keeps pace with modern market standards.",
+        },
+        seo: {
+          title: "Search Engine Optimization (SEO)",
+          description:
+            "We help your website appear in the top ranks in search engines through keyword analysis, page structure optimization, and accelerating the overall performance of the site. Our goal is to increase organic visits to your site and attract customers who are truly interested in your services or products.",
+        },
+        hosting: {
+          title: "Web Hosting",
+          description:
+            "We provide reliable and fast hosting services that ensure your site runs 24/7 without interruption. We offer packages that suit various needs with continuous technical support, periodic backups, and advanced data protection to ensure a stable and secure experience always.",
         },
         design: {
           title: "UI/UX Design",
           description:
-            "Elegant, human-centered interfaces that make every click feel effortless.",
-        },
-        cloud: {
-          title: "Cloud Integration",
-          description:
-            "Modern cloud solutions that keep your systems flexible and scalable.",
-        },
-        ai: {
-          title: "AI & Automation",
-          description:
-            "Smart automation tools powered by artificial intelligence to boost efficiency.",
-        },
-        consulting: {
-          title: "Technical Consultation",
-          description:
-            "Strategic guidance to help you make confident technology decisions.",
+            "We create attractive interface designs and smooth user experiences that ensure visitor comfort and motivate them to interact with your website or app. We focus on transforming the idea into a professional visual experience that reflects your brand identity and increases user satisfaction rates.",
         },
       },
     },
     whyChoose: {
       title: "Why Choose Lekka",
-      subtitle: "Your trusted partner for digital excellence",
+      subtitle: "Your trusted partner for achieving digital excellence.",
       features: {
         expertise: {
-          title: "Expert Team",
+          title: "Distinguished Team",
           description:
-            "A passionate team of professionals mastering modern tools and technologies.",
+            "A group of elite developers and creatives working passionately to deliver refined software solutions that meet your needs.",
         },
         quality: {
-          title: "Unmatched Quality",
+          title: "Guaranteed Quality",
           description:
-            "Every project goes through rigorous quality checks to ensure perfection.",
+            "We adhere to the highest standards of precision and testing to ensure results that exceed expectations.",
         },
         support: {
-          title: "Dedicated Support",
+          title: "Continuous Support",
           description:
-            "We’re here for you 24/7 to keep your business running smoothly.",
+            "We're by your side every step of your digital journey to provide a hassle-free experience.",
         },
         innovation: {
-          title: "Future-Ready Tech",
+          title: "Advanced Technologies",
           description:
-            "We build with tomorrow’s technology to keep you ahead of the curve.",
+            "We leverage the latest technologies to build future-ready solutions that are scalable and adaptable.",
         },
         delivery: {
-          title: "On-Time Delivery",
+          title: "Commitment to Deadlines",
           description:
-            "Punctual, efficient, and transparent — we deliver when we promise.",
+            "We value your time and always ensure delivery within the agreed timelines.",
         },
         pricing: {
-          title: "Fair Pricing",
+          title: "Competitive Pricing",
           description:
-            "Premium quality doesn’t need a premium price — we keep things fair and clear.",
+            "We offer exceptional quality at a fair cost suitable for all types of projects.",
         },
       },
     },
@@ -323,59 +323,65 @@ export const translations = {
       title: "ما نقدمه",
       items: {
         web: {
-          title: "تطوير الويب",
-          description: "مواقع مخصصة عالية الأداء مصممة للنمو والتحويل.",
+          title: "تصميم مواقع إلكترونية",
+          description:
+            "نصمم مواقع عصرية تجمع بين الجمال والسرعة والاحترافية، مع واجهات مستخدم سهلة التصفح وتجربة استخدام مريحة على جميع الأجهزة. سواء كنت تحتاج موقعًا تعريفيًا لشركتك أو نظامًا متكاملًا لإدارة خدماتك، نحرص على تقديم موقع يعكس هوية مشروعك ويحقق أهدافك بدقة.",
+        },
+        ecommerce: {
+          title: "إنشاء متجر إلكتروني",
+          description:
+            "نوفر لك متجرًا إلكترونيًا متكاملًا يساعدك على عرض منتجاتك بسهولة وجذب المزيد من العملاء. نستخدم أحدث التقنيات لتطوير متاجر سريعة وآمنة، مع نظام دفع وشحن متكامل، ولوحة تحكم بسيطة تتيح لك إدارة الطلبات والمخزون بسهولة.",
         },
         mobile: {
-          title: "تطوير تطبيقات الموبايل",
-          description: "تطبيقات أصلية ومتعددة المنصات مصممة للسرعة والثبات.",
+          title: "تصميم تطبيق جوال",
+          description:
+            "نطور تطبيقات مخصصة لأنظمة Android وiOS بتصميم حديث وتجربة مستخدم مريحة. نساعدك على تحويل فكرتك إلى تطبيق عملي يخدم جمهورك ويعزز تواجدك الرقمي، مع أداء قوي وسلاسة في الاستخدام تواكب معايير السوق الحديثة.",
+        },
+        seo: {
+          title: "تحسين محركات البحث (SEO)",
+          description:
+            "نساعد موقعك على الظهور في المراتب الأولى داخل محركات البحث من خلال تحليل الكلمات المفتاحية، تحسين هيكل الصفحات، وتسريع الأداء العام للموقع. هدفنا زيادة الزيارات العضوية لموقعك وجذب العملاء المهتمين فعلاً بخدماتك أو منتجاتك.",
+        },
+        hosting: {
+          title: "استضافة المواقع الإلكترونية",
+          description:
+            "نوفر خدمات استضافة موثوقة وسريعة تضمن تشغيل موقعك على مدار الساعة بدون انقطاع. نقدم باقات تناسب مختلف الاحتياجات مع دعم فني مستمر، نسخ احتياطية دورية، وحماية متقدمة لبياناتك لضمان تجربة مستقرة وآمنة دائمًا.",
         },
         design: {
-          title: "تصميم UI/UX",
-          description: "واجهات أنيقة تضع المستخدم في قلب التجربة.",
-        },
-        cloud: {
-          title: "التكامل السحابي",
-          description: "حلول سحابية حديثة تحافظ على مرونة أنظمتك وتوسّعها.",
-        },
-        ai: {
-          title: "الذكاء الاصطناعي والأتمتة",
-          description: "أنظمة ذكية مدعومة بالذكاء الاصطناعي لتحسين الكفاءة.",
-        },
-        consulting: {
-          title: "الاستشارات التقنية",
-          description: "إرشاد استراتيجي لمساعدتك على اتخاذ قرارات تقنية واثقة.",
+          title: "تصميم واجهات وتجربة المستخدم (UI/UX)",
+          description:
+            "نبتكر تصاميم واجهات جذابة وتجارب استخدام سلسة تضمن راحة الزائر وتحفّزه على التفاعل مع موقعك أو تطبيقك. نركز على تحويل الفكرة إلى تجربة بصرية احترافية، تعكس هوية علامتك التجارية وتزيد من معدل رضا المستخدمين.",
         },
       },
     },
     whyChoose: {
       title: "لماذا تختار ليكا",
-      subtitle: "شريكك الموثوق للتميز الرقمي",
+      subtitle: "شريكك الموثوق لتحقيق التميز الرقمي.",
       features: {
         expertise: {
-          title: "فريق محترف",
-          description: "فريق شغوف من الخبراء يتقن أحدث الأدوات والتقنيات.",
+          title: "فريق متميز",
+          description: "نخبة من المطورين والمبدعين يعملون بشغف لتقديم حلول برمجية متقنة تلبي احتياجاتك.",
         },
         quality: {
-          title: "جودة لا تُضاهى",
-          description: "كل مشروع يخضع لاختبارات دقيقة لضمان الكمال.",
+          title: "جودة مضمونة",
+          description: "نلتزم بأعلى معايير الدقة والاختبار لضمان نتائج تفوق التوقعات.",
         },
         support: {
-          title: "دعم مخصص",
+          title: "دعم مستمر",
           description:
-            "نحن هنا من أجلك على مدار الساعة لضمان سير أعمالك بسلاسة.",
+            "نحن بجانبك في كل خطوة من رحلتك الرقمية لتوفير تجربة خالية من التعقيدات.",
         },
         innovation: {
-          title: "تقنيات المستقبل",
-          description: "نبني باستخدام تقنيات الغد لتبقى متقدماً دائمًا.",
+          title: "تقنيات متقدمة",
+          description: "نعتمد أحدث التقنيات لنبني حلولًا مستقبلية قابلة للتطوير والنمو.",
         },
         delivery: {
-          title: "التسليم في الوقت المحدد",
-          description: "دقة، شفافية، والتزام — نسلم في الوقت الذي نعد به.",
+          title: "التزام بالمواعيد",
+          description: "نقدر وقتك ونحرص دائمًا على التسليم في المواعيد المحددة.",
         },
         pricing: {
-          title: "أسعار عادلة",
-          description: "جودة متميزة بأسعار واضحة ومنصفة بلا تكاليف خفية.",
+          title: "أسعار تنافسية",
+          description: "نقدم جودة استثنائية بتكلفة عادلة تناسب جميع أنواع المشاريع.",
         },
       },
     },
@@ -524,58 +530,64 @@ export const translations = {
       title: "我们的服务",
       items: {
         web: {
-          title: "网站开发",
-          description: "定制高性能网站，助您实现规模化与转化率提升。",
+          title: "网站设计",
+          description:
+            "我们设计集美观、速度与专业性于一体的现代网站，配备易于导航的用户界面，并在所有设备上提供舒适的用户体验。无论您需要企业形象网站还是管理服务的综合系统，我们都致力于打造能够精准反映您项目特色并实现目标的网站。",
+        },
+        ecommerce: {
+          title: "电子商务商店开发",
+          description:
+            "我们为您提供完整的在线商店，帮助您轻松展示产品并吸引更多客户。我们采用最新技术开发快速且安全的商店，配备集成的支付和物流系统，以及简单的控制面板，让您轻松管理订单和库存。",
         },
         mobile: {
           title: "移动应用开发",
-          description: "跨平台与原生应用，兼具速度、稳定性与用户体验。",
+          description:
+            "我们为 Android 和 iOS 系统开发定制应用，设计现代、用户体验舒适。我们帮助您将创意转化为实用的应用程序，服务于您的受众并增强数字影响力，具备强大性能和流畅的可用性，符合现代市场标准。",
+        },
+        seo: {
+          title: "搜索引擎优化 (SEO)",
+          description:
+            "我们通过关键词分析、页面结构优化和提升网站整体性能，帮助您的网站在搜索引擎中占据顶部排名。我们的目标是增加网站的自然访问量，吸引真正对您的服务或产品感兴趣的客户。",
+        },
+        hosting: {
+          title: "网站托管",
+          description:
+            "我们提供可靠且快速的托管服务，确保您的网站 24/7 不间断运行。我们提供适合各种需求的套餐，配备持续的技术支持、定期备份和高级数据保护，确保始终稳定安全的体验。",
         },
         design: {
-          title: "UI/UX 设计",
-          description: "以人为本的优雅界面，让每一次点击都自然顺畅。",
-        },
-        cloud: {
-          title: "云端集成",
-          description: "现代化云解决方案，让您的系统更灵活、更具扩展性。",
-        },
-        ai: {
-          title: "人工智能与自动化",
-          description: "智能自动化工具，助您提高效率、优化流程。",
-        },
-        consulting: {
-          title: "技术咨询",
-          description: "战略性技术指导，帮助您做出明智的技术决策。",
+          title: "UI/UX 界面与用户体验设计",
+          description:
+            "我们打造吸引人的界面设计和流畅的用户体验，确保访客舒适感并激励他们与您的网站或应用互动。我们专注于将创意转化为专业的视觉体验，展现您的品牌形象并提高用户满意度。",
         },
       },
     },
     whyChoose: {
       title: "为什么选择 Lekka",
-      subtitle: "您值得信赖的数字卓越合作伙伴",
+      subtitle: "您值得信赖的数字卓越合作伙伴。",
       features: {
         expertise: {
-          title: "专业团队",
-          description: "充满热情的专业人才，精通现代技术与工具。",
+          title: "卓越团队",
+          description: "精英开发者与创意人才倾情打造，为您提供精致的软件解决方案。",
         },
         quality: {
-          title: "卓越品质",
-          description: "每个项目都经过严格质量检测，确保完美交付。",
+          title: "品质保证",
+          description: "我们坚持最高标准的精准测试，确保成果超越预期。",
         },
         support: {
-          title: "专属支持",
-          description: "我们 24/7 全天候提供支持，保障您的业务平稳运行。",
+          title: "持续支持",
+          description: "我们在您的数字旅程中始终相伴，为您提供无忧体验。",
         },
         innovation: {
-          title: "前瞻科技",
-          description: "采用未来导向的技术，让您始终领先一步。",
+          title: "先进技术",
+          description: "采用最新技术构建可扩展、可持续发展的未来解决方案。",
         },
         delivery: {
           title: "准时交付",
-          description: "高效、透明、守时——我们始终兑现承诺。",
+          description: "我们珍惜您的时间，始终确保在约定期限内交付。",
         },
         pricing: {
-          title: "公平定价",
-          description: "卓越品质无需高价——我们提供公正透明的报价。",
+          title: "价格合理",
+          description: "以公平合理的价格提供卓越品质，适合各类项目。",
         },
       },
     },

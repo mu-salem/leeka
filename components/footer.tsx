@@ -121,11 +121,11 @@ export function Footer() {
               <h4 className="font-bold text-lg mb-6">{t.footer.ourServices}</h4>
               <ul className="space-y-3">
                 <li className="text-muted-foreground">{t.services.items.web.title}</li>
+                <li className="text-muted-foreground">{t.services.items.ecommerce.title}</li>
                 <li className="text-muted-foreground">{t.services.items.mobile.title}</li>
                 <li className="text-muted-foreground">{t.services.items.design.title}</li>
-                <li className="text-muted-foreground">{t.services.items.cloud.title}</li>
-                <li className="text-muted-foreground">{t.services.items.ai.title}</li>
-                <li className="text-muted-foreground">{t.services.items.consulting.title}</li>
+                <li className="text-muted-foreground">{t.services.items.seo.title}</li>
+                <li className="text-muted-foreground">{t.services.items.hosting.title}</li>
               </ul>
             </div>
 

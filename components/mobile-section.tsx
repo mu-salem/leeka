@@ -8,23 +8,23 @@ import { Button } from "@/components/ui/button"
 const mobileApps = [
   {
     title: "Fitness Tracker",
-    image: "/fitness-app-mobile-screen-dark-theme.jpg",
+    image: "/works/mobile/mobile1.png",
   },
   {
     title: "Food Delivery",
-    image: "/food-delivery-app-mobile-interface.jpg",
+    image: "/works/mobile/mobile1.png",
   },
   {
     title: "Social Network",
-    image: "/social-media-app-mobile-feed.jpg",
+    image: "/works/mobile/mobile1.png",
   },
   {
     title: "Music Player",
-    image: "/music-player-app-mobile-interface.jpg",
+    image: "/works/mobile/mobile1.png",
   },
   {
     title: "Travel Booking",
-    image: "/travel-booking-app-mobile-screen.jpg",
+    image: "/works/mobile/mobile1.png",
   },
 ]
 
@@ -96,8 +96,10 @@ export function MobileSection() {
                     zIndex: 10 - absOffset,
                   }}
                 >
-                  <div className="w-64 h-[520px] bg-card border-4 border-border rounded-[3rem] overflow-hidden shadow-2xl">
-                    <img src={app.image || "/placeholder.svg"} alt={app.title} className="w-full h-full object-cover" />
+                  <div className="w-64 h-[520px] bg-card border-4 border-border rounded-[3rem] overflow-hidden shadow-2xl p-8">
+                    <div className="w-full h-full overflow-hidden rounded-2xl">
+                      <img src={app.image || "/placeholder.svg"} alt={app.title} className="w-full h-full object-cover" />
+                    </div>
                   </div>
                   {absOffset === 0 && <p className="text-center mt-6 text-lg font-semibold">{app.title}</p>}
                 </div>

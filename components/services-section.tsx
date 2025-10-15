@@ -3,12 +3,12 @@
 import { useLanguage } from "@/lib/language-context";
 import { motion } from "framer-motion";
 import {
-  Code,
+  Globe,
+  ShoppingCart,
   Smartphone,
+  Search,
+  Server,
   Palette,
-  Cloud,
-  Sparkles,
-  MessageSquare,
 } from "lucide-react";
 
 export function ServicesSection() {
@@ -18,9 +18,14 @@ export function ServicesSection() {
 
   const services = [
     {
-      icon: Code,
+      icon: Globe,
       title: t.services.items.web.title,
       description: t.services.items.web.description,
+    },
+    {
+      icon: ShoppingCart,
+      title: t.services.items.ecommerce.title,
+      description: t.services.items.ecommerce.description,
     },
     {
       icon: Smartphone,
@@ -28,24 +33,19 @@ export function ServicesSection() {
       description: t.services.items.mobile.description,
     },
     {
+      icon: Search,
+      title: t.services.items.seo.title,
+      description: t.services.items.seo.description,
+    },
+    {
+      icon: Server,
+      title: t.services.items.hosting.title,
+      description: t.services.items.hosting.description,
+    },
+    {
       icon: Palette,
       title: t.services.items.design.title,
       description: t.services.items.design.description,
-    },
-    {
-      icon: Cloud,
-      title: t.services.items.cloud.title,
-      description: t.services.items.cloud.description,
-    },
-    {
-      icon: Sparkles,
-      title: t.services.items.ai.title,
-      description: t.services.items.ai.description,
-    },
-    {
-      icon: MessageSquare,
-      title: t.services.items.consulting.title,
-      description: t.services.items.consulting.description,
     },
   ];
 
@@ -175,13 +175,6 @@ export function ServicesSection() {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 scale-105" />
 
                     <div className="relative bg-card/80 backdrop-blur-md border-2 border-border/50 rounded-3xl p-8 overflow-hidden transition-all duration-700 group-hover:border-primary/50 group-hover:bg-card h-full flex flex-col shadow-lg hover:shadow-2xl">
-                      {/* Animated corner accent */}
-                      <motion.div
-                        className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full"
-                        whileHover={{ scale: 1.5, opacity: 0.15 }}
-                        transition={{ duration: 0.5 }}
-                      />
-
                       {/* Icon with circular background */}
                       <div className="relative mb-6">
                         <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 via-primary/10 to-transparent flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary/30 transition-shadow duration-500">
