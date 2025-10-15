@@ -33,41 +33,28 @@ export function Footer() {
               <div className="mb-6">
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/share/1DfHDV63H5/"
                     className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110"
                   >
                     <Facebook className="h-5 w-5 text-primary" />
                   </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110"
-                  >
-                    <Twitter className="h-5 w-5 text-primary" />
-                  </a>
-                  <a
+                  {/* <a
                     href="#"
                     className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110"
                   >
                     <Instagram className="h-5 w-5 text-primary" />
-                  </a>
+                  </a> */}
                   <a
-                    href="#"
+                    href="www.linkedin.com/in/lekka-technology"
                     className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110"
                   >
                     <Linkedin className="h-5 w-5 text-primary" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all hover:scale-110"
-                  >
-                    <Github className="h-5 w-5 text-primary" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Three Columns - تأخذ 7 أعمدة وتتقاسمها بالتساوي */}
           <div className="md:col-span-7 grid md:grid-cols-3 gap-12">
             {/* Quick Links */}
             <div className="text-center md:text-start">

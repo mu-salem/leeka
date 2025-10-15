@@ -111,6 +111,35 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Fix autofill background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #ffffff !important;
+}
+
+/* For other browsers */
+input:-moz-autofill,
+input:-moz-autofill:hover,
+input:-moz-autofill:focus {
+  box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1) inset !important;
+  color: #ffffff !important;
+}
+
+/* Keep icons visible when autofill is active */
+input:-webkit-autofill ~ svg,
+input:-webkit-autofill + svg,
+.group:has(input:-webkit-autofill) svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 10 !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

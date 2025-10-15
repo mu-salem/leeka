@@ -3,7 +3,7 @@ export type Language = "en" | "ar" | "zh";
 export const translations = {
   en: {
     site: {
-      title: "Leeka Tech",
+      title: "lekka Tech",
     },
     nav: {
       home: "Home",
@@ -13,7 +13,7 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      title: "Leeka Tech — where innovation meets digital brilliance.",
+      title: "lekka Tech — where innovation meets digital brilliance.",
       subtitle:
         "We design and build world-class web and mobile applications that empower businesses to grow, connect, and lead.",
       cta1: "Explore Our Work",
@@ -193,8 +193,8 @@ export const translations = {
         submit: "Send Message",
       },
       info: {
-        email: "hello@lekkatech.com",
-        phone: "+1 (555) 123-4567",
+        email: "lekkatechs@gmail.com",
+        phone: "+201150148000",
         address: "123 Tech Street, Digital City",
       },
       cta: {
@@ -421,7 +421,7 @@ export const translations = {
   },
   zh: {
     site: {
-      title: "Leeka 科技",
+      title: "lekka 科技",
     },
     nav: {
       home: "首页",
@@ -431,7 +431,7 @@ export const translations = {
       contact: "联系我们",
     },
     hero: {
-      title: "Leeka 科技 — 创新与数字卓越的交汇点。",
+      title: "lekka 科技 — 创新与数字卓越的交汇点。",
       subtitle:
         "我们设计并构建世界级的网页与移动应用，帮助企业实现增长、连接客户并引领行业。",
       cta1: "浏览我们的作品",

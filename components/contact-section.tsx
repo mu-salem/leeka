@@ -11,9 +11,8 @@ import {
   Mail,
   Phone,
   Linkedin,
-  Github,
-  Dribbble,
   MessageCircle,
+  Facebook,
   MapPin,
 } from "lucide-react";
 import { ConsultationDialog } from "@/components/consultation-dialog";
@@ -192,7 +191,7 @@ export function ContactSection() {
               <p className="text-sm text-muted-foreground mb-4">Follow us</p>
               <div className="flex gap-4">
                 <a
-                  href="https://your-link-here.com"
+                  href="www.linkedin.com/in/lekka-technology"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-xl bg-card border border-border hover:border-primary/50 flex items-center justify-center transition-all hover:-translate-y-1 glow-hover"
@@ -200,20 +199,12 @@ export function ContactSection() {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://your-link-here.com"
+                  href="https://www.facebook.com/share/1DfHDV63H5/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-xl bg-card border border-border hover:border-primary/50 flex items-center justify-center transition-all hover:-translate-y-1 glow-hover"
                 >
-                  <Github className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://your-link-here.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl bg-card border border-border hover:border-primary/50 flex items-center justify-center transition-all hover:-translate-y-1 glow-hover"
-                >
-                  <Dribbble className="h-5 w-5" />
+                  <Facebook className="h-5 w-5" />
                 </a>
               </div>
             </div>

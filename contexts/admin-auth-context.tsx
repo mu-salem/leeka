@@ -28,27 +28,62 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    // Frontend only - simulated login
-    // In production, this would call your API
-    if (email && password) {
-      const userData = {
-        email,
-        name: email.split('@')[0],
-      };
-      
-      setIsAuthenticated(true);
-      setUser(userData);
-      localStorage.setItem('adminAuth', JSON.stringify({ user: userData }));
-      return true;
+    try {
+      // Call backend login API
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success && data.token) {
+        const userData = {
+          email: data.admin.email,
+          name: data.admin.name,
+        };
+        
+        setIsAuthenticated(true);
+        setUser(userData);
+        localStorage.setItem('adminAuth', JSON.stringify({ user: userData }));
+        localStorage.setItem('adminToken', data.token);
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error('Login error:', error);
+      return false;
     }
-    return false;
   };
 
-  const logout = () => {
-    setIsAuthenticated(false);
-    setUser(null);
-    localStorage.removeItem('adminAuth');
-    router.push('/admin/login');
+  const logout = async () => {
+    try {
+      // Get token from localStorage
+      const token = localStorage.getItem('adminToken');
+      
+      if (token) {
+        // Call backend logout API
+        await fetch('http://localhost:3000/auth/logout', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+      }
+    } catch (error) {
+      console.error('Logout error:', error);
+    } finally {
+      // Clear local state and storage regardless of API call result
+      setIsAuthenticated(false);
+      setUser(null);
+      localStorage.removeItem('adminAuth');
+      localStorage.removeItem('adminToken');
+      router.push('/admin/login');
+    }
   };
 
   return (
