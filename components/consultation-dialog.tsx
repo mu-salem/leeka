@@ -17,7 +17,7 @@ export function ConsultationDialog({ isOpen, onClose }: ConsultationDialogProps)
     name: "",
     email: "",
     phone: "",
-    message: "",
+    service: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -28,23 +28,25 @@ export function ConsultationDialog({ isOpen, onClose }: ConsultationDialogProps)
     setSubmitStatus("idle");
 
     try {
-      const response = await fetch('/api/consultation', {
+      const response = await fetch('http://localhost:5000/api/free-consultation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to send message');
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error || 'Failed to send message');
       }
 
       setSubmitStatus("success");
       
       setTimeout(() => {
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", service: "" });
         setSubmitStatus("idle");
         onClose();
-      }, 2000);
+      }, 3000);
     } catch (error) {
       console.error('Error sending consultation request:', error);
       setSubmitStatus("error");
@@ -159,17 +161,17 @@ export function ConsultationDialog({ isOpen, onClose }: ConsultationDialogProps)
                 />
               </div>
 
-              {/* Message Textarea */}
+              {/* Service Input */}
               <div>
-                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2">
+                <label htmlFor="service" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2">
                   {t.freeConsultation.dialog.form.message}
                 </label>
                 <textarea
-                  id="message"
-                  name="message"
+                  id="service"
+                  name="service"
                   required
                   rows={3}
-                  value={formData.message}
+                  value={formData.service}
                   onChange={handleChange}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
                   disabled={isSubmitting}

@@ -21,6 +21,17 @@ export function ContactSection() {
   const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitResult, setSubmitResult] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -40,10 +51,43 @@ export function ContactSection() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("[v0] Form submitted");
+    setLoading(true);
+    setSubmitResult(null);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      setSubmitResult(data);
+
+      if (data.success) {
+        // Reset form on success
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+      setSubmitResult({
+        success: false,
+        message: 'Failed to send message. Please try again later.',
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -79,33 +123,70 @@ export function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   placeholder={t.contact.form.name}
                   className="bg-card border-border"
                   required
+                  disabled={loading}
                 />
               </div>
               <div>
                 <Input
+                  name="email"
                   type="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   placeholder={t.contact.form.email}
                   className="bg-card border-border"
                   required
+                  disabled={loading}
+                />
+              </div>
+              <div>
+                <Input
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  placeholder="Subject"
+                  className="bg-card border-border"
+                  required
+                  disabled={loading}
                 />
               </div>
               <div>
                 <Textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder={t.contact.form.message}
                   rows={6}
                   className="bg-card border-border resize-none"
                   required
+                  disabled={loading}
                 />
               </div>
+
+              {submitResult && (
+                <div
+                  className={`p-4 rounded-lg ${
+                    submitResult.success
+                      ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-200'
+                      : 'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-200'
+                  }`}
+                >
+                  {submitResult.message}
+                </div>
+              )}
+
               <Button
                 type="submit"
                 size="lg"
                 className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity glow-hover"
+                disabled={loading}
               >
-                {t.contact.form.submit}
+                {loading ? 'Sending...' : t.contact.form.submit}
               </Button>
             </form>
           </div>
