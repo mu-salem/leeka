@@ -1,4 +1,4 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
 
 const settingsSchema = new mongoose.Schema({
   key: {
@@ -7,11 +7,11 @@ const settingsSchema = new mongoose.Schema({
     unique: true,
   },
   value: {
-    type: Types.Mixed,
+    type: mongoose.Schema.Types.Mixed,
     required: true,
   },
   updatedBy: {
-    type: Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
 }, { timestamps: true });

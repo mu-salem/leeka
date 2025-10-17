@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { asyncHandler } from "../../utils/error handling/asynchandler.js";
 import validation from "../../middleware/validation.meddleware.js";
-import isAdminAuthenticated from "../../middleware/admin-authentication.middleware.js";
 import * as contentService from "./content.service.js";
 import * as contentSchema from "./content.validation.js";
+import isAuthenticated from "../../middleware/authentication.middleware.js";
 
 const router = Router();
 
@@ -14,7 +14,7 @@ const router = Router();
  */
 router.post(
   "/",
-  isAdminAuthenticated,
+  isAuthenticated,
   validation(contentSchema.createContent),
   asyncHandler(contentService.createContent)
 );
@@ -26,7 +26,7 @@ router.post(
  */
 router.put(
   "/:id",
-  isAdminAuthenticated,
+  isAuthenticated,
   validation(contentSchema.updateContent),
   asyncHandler(contentService.updateContent)
 );
@@ -38,7 +38,7 @@ router.put(
  */
 router.delete(
   "/:id",
-  isAdminAuthenticated,
+  isAuthenticated,
   validation(contentSchema.deleteContent),
   asyncHandler(contentService.deleteContent)
 );
@@ -50,7 +50,7 @@ router.delete(
  */
 router.get(
   "/",
-  isAdminAuthenticated,
+  isAuthenticated,
   validation(contentSchema.getAllContent),
   asyncHandler(contentService.getAllContent)
 );
@@ -62,7 +62,7 @@ router.get(
  */
 router.get(
   "/:id",
-  isAdminAuthenticated,
+  isAuthenticated,
   validation(contentSchema.getContentById),
   asyncHandler(contentService.getContentById)
 );
@@ -74,7 +74,7 @@ router.get(
  */
 router.get(
   "/section/:section",
-  isAdminAuthenticated,
+  isAuthenticated,
   asyncHandler(contentService.getContentBySection)
 );
 

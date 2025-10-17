@@ -12,7 +12,7 @@ const mediaSchema = new mongoose.Schema(
       required: true,
     },
     uploadedBy: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
     altText: String,

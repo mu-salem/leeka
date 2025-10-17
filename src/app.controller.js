@@ -6,15 +6,25 @@ import morgan from "morgan";
 
 // Import routers
 import authRouter from "./modules/auth/auth.controller.js";
-import adminRouter from "./modules/admin/admin.controller.js";
 import usersRouter from "./modules/users/users.controller.js";
-import worksRouter from "./modules/works/works.controller.js";
 import contentRouter from "./modules/content/content.controller.js";
 
 const bootstrap = async (app, express) => {
   // Connect to database
   await connectDB();
   app.use(express.json());
+
+  // Enable CORS for frontend communication
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    
+    if (req.method === 'OPTIONS') {
+      return res.sendStatus(200);
+    }
+    next();
+  });
 
   // Use Morgan middleware for logging HTTP requests in the "dev" format
   app.use(morgan("dev"));
@@ -24,9 +34,7 @@ const bootstrap = async (app, express) => {
 
   // Routes
   app.use("/auth", authRouter);
-  app.use("/admin", adminRouter);
   app.use("/users", usersRouter);
-  app.use("/works", worksRouter);
   app.use("/content", contentRouter);
 
   // Handle all undefined routes with a custom "not found" handler

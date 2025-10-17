@@ -1,5 +1,5 @@
 
-import User from "../DB/models/user.model.js";
+import { Admin } from "../DB/models/admin.model.js";
 import { asyncHandler } from "../utils/error handling/asynchandler.js";
 import { verifyToken } from "../utils/token/token.js";
 
@@ -13,7 +13,7 @@ const isAuthenticated = asyncHandler(async (req, res, next) => {
     const Token = authorization.split(" ")[1];
     const { id } = verifyToken({ token: Token });
 
-    const user = await User.findById(id).select("-password").lean();
+    const user = await Admin.findById(id).select("-password").lean();
     if (!user) return next(new Error("User not found!"), { cause: 404 });
 
     if (!user.isLoggedIn) 

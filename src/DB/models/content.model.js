@@ -1,4 +1,4 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
 
 const contentSchema = new mongoose.Schema(
   {
@@ -16,7 +16,7 @@ const contentSchema = new mongoose.Schema(
       default: "text",
     },
     value: {
-      type: Types.Mixed,
+      type: mongoose.Schema.Types.Mixed,
       required: true,
     },
     translations: {
@@ -25,7 +25,7 @@ const contentSchema = new mongoose.Schema(
       zh: { type: String },
     },
     updatedBy: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
   },
